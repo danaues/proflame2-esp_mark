@@ -280,8 +280,8 @@ void ProFlame2Component::build_packet(uint8_t *packet) {
   //   cmd2=0x31 -> err2=0x36
   //   cmd2=0x21 -> err2=0x07
   // These map to (c,d) = (0x05,0x02) for cmd1, (0x04,0x04) for cmd2.
-  uint8_t checksum1 = this->calculate_checksum(cmd1, 0x05, 0x02);
-  uint8_t checksum2 = this->calculate_checksum(cmd2, 0x04, 0x04);
+  uint8_t checksum1 = this->calculate_checksum(cmd1, 0x00, 0x02);
+  uint8_t checksum2 = this->calculate_checksum(cmd2, 0x01, 0x02);
 
   ESP_LOGD(TAG,
            "CMD summary: serial bytes=%02X %02X %02X cmd1=0x%02X cmd2=0x%02X "
